@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .wrap {
+        width: 400px;
+        height: 400px;
+        background-color: #eee;
+        position: relative;
+    }
+
+    .ul {
+        box-sizing: border-box;
+        border : 1px solid black;
+        padding: 15px;
+        /* width: 100%; */
+        /* height: auto; */
+        max-height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y : auto;
+        position: sticky;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column-reverse;
+        
+    }
+
+    .li {
+        width: 100%;
+        margin-bottom: 15px;
+        background-color: #999;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .li p {
+        width: 100%;
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <div class="wrap">
+        <div class="ul">
+            <div class="li">
+                <p>1</p>
+                <p>2</p>
+                <p>3</p>
+            </div>
+            <div class="li">
+                <p>4</p>
+                <p>5</p>
+                <p>6</p>
+            </div>
+            <div class="li">
+                <p>7</p>
+                <p>8</p>
+                <p>9</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var ul = document.querySelector('.ul');
+        var wrap = document.querySelector('.wrap');
+        var li = document.querySelector('.li');
+        window.addEventListener('load', function(){
+        //     // ul.scrollIntoView();
+            ul.scrollTo(li.scrollHeight,0);
+            wrap.scrollTo(li.scrollHeight,0);
+            li.scrollTo(li.scrollHeight,0);
+        });
+    </script>
+</body>
+
+</html>
